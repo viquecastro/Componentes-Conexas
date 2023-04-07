@@ -3,7 +3,7 @@
 
 Escreva um programa que receba um grafo não-direcionado e que escreva as suas componentes conexas. Uma componente conexa é um conjunto maximal de vértices ligados por caminhos no grafo.
 
-A entrada, recebida através da entrada padrão, estará no formato UCINET DL, lista de arestas ("edgelist1"), sem rótulos para os vértices e sem pesos para as arestas.
+A entrada, recebida através da entrada padrão, estará no formato UCINET DL, lista de arestas ("edgelist1"), sem rótulos para os vértices e sem pesos para as arestas.Observe que, no formato acima, os vértices são numerados a partir de 1.
 
 A saída, fornecida através da saída padrão, tem que estar no seguinte formato:
 
