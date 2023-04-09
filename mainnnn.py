@@ -18,4 +18,3 @@ print(listaArestas)
 
 listaAdjacencias=fun.listaAdj(listaArestas,numvertices)
 print(listaAdjacencias)
-
