@@ -37,8 +37,43 @@ def listaVizinhos(novaLista,x):
 
 #Função que cria lista de adjacências usando dicionário
 def listaAdj(novaLista,numVertices):
-    adjList= {}
-    adjList[0]=[0]
+    vizinhos= {}
+    vizinhos[0]=[0]
     for i in range (1,numVertices+1):
-        adjList[i]=listaVizinhos(novaLista,i)
-    return adjList
+        vizinhos[i]=listaVizinhos(novaLista,i)
+    return vizinhos
+
+#Função que cria uma lista de rótulos inicializados com falso
+def listaRotulos(numVertices):
+    rotulos={}
+    for i in range(numVertices):
+        rotulos[i]=False
+    return rotulos
+
+#Função que cria uma lista que guarda a componente atual que está sendo visitada
+#def componente(verticeOrigem):
+#   recebe um vertice e retorna a lista de componentes na qual ele esta inserido
+
+#Função que armazena as componentes de um grafo
+#def componentesConexas():
+#    uyhy
+
+
+
+#Função que atribui rótulos para os vértices que estejam na mesma componente conexa. Retorna UMA componente conexa.depois que a funçao é executada dentro do laço, faz o append da componente no vetor componentes
+def rotuloAtribui(adjList,vertice,rotlist,vetorCC):
+   #Selecionar a origem e marcá-la como descoberta
+   rotlist[vertice]=True
+   vetorCC.append(vertice) 
+   if adjList[vertice]==[]:
+       return vetorCC
+   else:
+       for i in range(len(adjList[vertice])):
+        if rotlist[adjList[vertice][i]]==True:
+            continue 
+        else:
+            rotuloAtribui(adjList,adjList[vertice][i],rotlist,vetorCC)
+        return vetorCC
+            
+    
+
