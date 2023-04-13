@@ -76,15 +76,21 @@ def criaComponente(adjList,vertice,rotlist,vetorCC):
             criaComponente(adjList,adjList[vertice][i],rotlist,vetorCC)
         return vetorCC
    
+#Função que ordena as componentes 
+def ordenaComp(formatComponentes):
+    for i in range(len(formatComponentes)):
+        formatComponentes[i].sort()
+    return formatComponentes
     
 #Função que printa as linhas da saída do programa
 def printLines(formatComponentes):
     for i in range(len(formatComponentes)):
-        #cada i é uma lista
+        #tratamento de strings
         line1=str(formatComponentes[i])
         line2=line1[1:]
         line3=line2[:-1]
-        print(line3)
+        line4=line3.replace(",","")
+        print(line4)
 
         
 

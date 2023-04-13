@@ -23,8 +23,14 @@ for i in range(1,numvertices):
 #Criar variável que só pode ser criada após o bloco de código acima
 numComponentes=fun.qtdeComp(todasCompConexas,numvertices)
 
-#Formatando a lista com todas as componentes conexas
+#Formatando a lista com todas as componentes conexas(tirar os 'none')
 formatComponentes=todasCompConexas[0:numComponentes]
+
+#Ordenando a lista com todas as componentes conexas
+todasCompConexas=fun.ordenaComp(formatComponentes)
+
+
+
 
 
 #Prints importantes
@@ -39,7 +45,7 @@ print(listaAdjacencias[9][1])
 print(listaRotulos)
 #print(vetorComp)
 print(todasCompConexas)
-print(type(int(todasCompConexas[0][0])))
+print(type(todasCompConexas[0][0]))
 print(todasCompConexas[1][0])
 print(len(todasCompConexas))
 print(formatComponentes)
