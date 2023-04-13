@@ -50,19 +50,20 @@ def listaRotulos(numVertices):
         rotulos[i]=False
     return rotulos
 
-#Função que cria uma lista que guarda a componente atual que está sendo visitada
-#def componente(verticeOrigem):
-#   recebe um vertice e retorna a lista de componentes na qual ele esta inserido
 
-#Função que armazena as componentes de um grafo
-#def componentesConexas():
-#    uyhy
-
+#Função que contabiliza o total de componentes
+def qtdeComp(todasCompConexas,numvertices):
+    cont=0
+    for i in range(numvertices):
+        if todasCompConexas[i]!=None:
+            cont=cont+1
+        else:
+            break
+    return cont
 
 
 #Função que atribui rótulos para os vértices que estejam na mesma componente conexa. Retorna UMA componente conexa.depois que a funçao é executada dentro do laço, faz o append da componente no vetor componentes
-def rotuloAtribui(adjList,vertice,rotlist,vetorCC):
-   #Selecionar a origem e marcá-la como descoberta
+def criaComponente(adjList,vertice,rotlist,vetorCC):
    rotlist[vertice]=True
    vetorCC.append(vertice) 
    if adjList[vertice]==[]:
@@ -72,8 +73,18 @@ def rotuloAtribui(adjList,vertice,rotlist,vetorCC):
         if rotlist[adjList[vertice][i]]==True:
             continue 
         else:
-            rotuloAtribui(adjList,adjList[vertice][i],rotlist,vetorCC)
+            criaComponente(adjList,adjList[vertice][i],rotlist,vetorCC)
         return vetorCC
-            
+   
     
+#Função que printa as linhas da saída do programa
+def printLines(formatComponentes):
+    for i in range(len(formatComponentes)):
+        #cada i é uma lista
+        line1=str(formatComponentes[i])
+        line2=line1[1:]
+        line3=line2[:-1]
+        print(line3)
+
+        
 
